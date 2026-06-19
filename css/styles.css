@@ -205,20 +205,18 @@ section{ padding:92px 0; }
 }
 .ambiance-list-row li::before{ content:'☕ '; font-size:0.8rem; }
 .ambiance-gallery{
-  column-count:3; column-gap:14px;
+  display:grid; grid-template-columns:repeat(3, 1fr); grid-auto-rows:260px; gap:14px;
 }
 .g-cell{
-  border-radius:10px; overflow:hidden; margin-bottom:14px;
+  border-radius:10px; overflow:hidden;
   box-shadow:0 16px 32px -14px rgba(0,0,0,0.5);
-  break-inside:avoid;
 }
-.g-cell img{ width:100%; height:auto; display:block; }
+.g-cell img{ width:100%; height:100%; object-fit:cover; display:block; }
 @media (max-width:880px){
-  .ambiance-gallery{ column-count:2; }
+  .ambiance-gallery{ grid-template-columns:repeat(2, 1fr); grid-auto-rows:190px; }
 }
 @media (max-width:480px){
-  .ambiance-gallery{ column-count:2; column-gap:10px; }
-  .g-cell{ margin-bottom:10px; }
+  .ambiance-gallery{ gap:10px; grid-auto-rows:150px; }
 }
 
 /* ---------- testimonials ---------- */
